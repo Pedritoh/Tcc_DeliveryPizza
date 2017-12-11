@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFF9C4"
+    tools:context="com.example.pedrito.delivery_pizza.Delivery.pedidoFeito">
+
+        <TextView
+            android:id="@+id/textViewRecibo"
+            android:layout_width="85dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="cursive"
+            android:paddingBottom="10px"
+            android:paddingEnd="10px"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:paddingStart="10px"
+            android:paddingTop="10px"
+            android:text="Pedido"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="30sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="71dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignEnd="@+id/totalBf" />
+
+    <TextView
+            android:id="@+id/TextCliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewRecibo"
+            android:layout_toStartOf="@+id/nomeBF"
+            android:text="@string/cliente"
+            android:textColor="@android:color/background_dark"
+            android:textSize="16sp" />
+
+    <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Pizza : "
+            android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/nomeF"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bebida"
+            android:textColor="@android:color/background_dark"
+        android:layout_marginTop="84dp"
+        android:layout_below="@+id/pizzaF"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+            android:id="@+id/nomeF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/TextCliente"
+            android:layout_alignBottom="@+id/TextCliente"
+            android:background="@drawable/shape3"
+            android:paddingBottom="5px"
+            android:paddingEnd="5px"
+            android:paddingLeft="5px"
+            android:paddingRight="5px"
+            android:paddingStart="5px"
+            android:paddingTop="5px"
+            android:text="Pedro Henrique"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/textView29" />
+
+        <TextView
+            android:id="@+id/pizzaF"
+            android:layout_width="300dp"
+            android:layout_height="18dp"
+            android:background="@drawable/shape3"
+            android:paddingBottom="5px"
+            android:paddingEnd="5px"
+            android:paddingLeft="5px"
+            android:paddingRight="5px"
+            android:paddingStart="5px"
+            android:paddingTop="5px"
+            android:text="Pizza Della Nonna        R$45,00"
+            android:textSize="10sp"
+            android:layout_alignBaseline="@+id/textView18"
+            android:layout_alignBottom="@+id/textView18"
+            android:layout_toEndOf="@+id/TextCliente" />
+
+    <TextView
+            android:id="@+id/bebidaF"
+            android:layout_width="250dp"
+            android:layout_height="18dp"
+            android:background="@drawable/shape3"
+            android:paddingBottom="5px"
+            android:paddingEnd="5px"
+            android:paddingLeft="5px"
+            android:paddingRight="5px"
+            android:paddingStart="5px"
+            android:paddingTop="5px"
+            android:text="Fanta           R$4,00"
+            android:textSize="10sp"
+        android:layout_alignBaseline="@+id/textView21"
+        android:layout_alignBottom="@+id/textView21"
+        android:layout_toEndOf="@+id/textView29" />
+
+    <TextView
+            android:id="@+id/textView46"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+        android:text="Total a Pagar :"
+            android:textColor="@android:color/background_dark"
+        android:layout_marginTop="31dp"
+        android:layout_below="@+id/textView21"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/totalBf"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_alignBaseline="@+id/textView46"
+        android:layout_alignBottom="@+id/textView46"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@+id/textView46"
+        android:background="@drawable/shape3"
+        android:paddingBottom="10px"
+        android:paddingEnd="10px"
+        android:paddingLeft="10px"
+        android:paddingRight="10px"
+        android:paddingStart="10px"
+        android:paddingTop="10px"
+        android:text="R$0,00"
+        android:textColor="@color/error_color"
+        android:textSize="18sp" />
+
+    <TextView
+            android:id="@+id/textView29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Devolver :"
+            android:textColor="@android:color/background_dark"
+            android:layout_below="@+id/totalBf"
+            android:layout_alignStart="@+id/textView46"
+            android:layout_marginTop="42dp" />
+
+        <TextView
+            android:id="@+id/devBf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape3"
+            android:paddingBottom="5px"
+            android:paddingEnd="5px"
+            android:paddingLeft="5px"
+            android:paddingRight="5px"
+            android:paddingStart="5px"
+            android:paddingTop="5px"
+            android:text="R$50,00"
+            android:textColor="@android:color/holo_green_light"
+            android:layout_alignTop="@+id/textView29"
+            android:layout_alignStart="@+id/textViewRecibo" />
+
+    <TextView
+        android:id="@+id/codPedidoBf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/error_color"
+        android:textSize="24sp"
+        android:layout_alignBaseline="@+id/textViewRecibo"
+        android:layout_alignBottom="@+id/textViewRecibo"
+        android:layout_toEndOf="@+id/textViewRecibo" />
+
+</RelativeLayout>

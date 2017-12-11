@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF9C4"
+    tools:context="com.example.pedrito.delivery_pizza.Delivery.Recibo">
+
+    <TextView
+        android:id="@+id/textViewRecibo"
+        android:layout_width="85dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="cursive"
+        android:paddingBottom="10px"
+        android:paddingEnd="10px"
+        android:paddingLeft="10px"
+        android:paddingRight="10px"
+        android:paddingStart="10px"
+        android:paddingTop="10px"
+        android:text="Pedido"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="71dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/trocoBf" />
+
+    <Button
+        android:id="@+id/Voltarlist"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:background="@drawable/shape"
+        android:text="@string/confirmar"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="225dp"
+        tools:layout_editor_absoluteY="549dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/bebidaF"
+        android:layout_marginBottom="40dp" />
+
+    <TextView
+        android:id="@+id/TextCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewRecibo"
+        android:layout_toStartOf="@+id/nomeBF"
+        android:text="@string/cliente"
+        android:textColor="@android:color/background_dark"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView18"
+        android:layout_below="@+id/pizzaF"
+        android:paddingTop="5px"
+        android:text="Valor Pizza :"
+        android:textColor="@android:color/background_dark" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="Pizza : "
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/TextCliente"
+        android:layout_alignStart="@+id/TextCliente" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/borda"
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/textView5"
+        android:layout_alignStart="@+id/textView5"
+        android:layout_marginTop="14dp" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Valor Borda :"
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/nomeBF"
+        android:layout_alignStart="@+id/textView19" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bebida"
+        android:textColor="@android:color/background_dark"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/textView20"
+        android:layout_alignStart="@+id/textView20" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quantidade :"
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/bebidaF"
+        android:layout_alignStart="@+id/textView21" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Formas Pagamento :"
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/valbeF"
+        android:layout_alignStart="@+id/textValor"
+        android:layout_marginTop="28dp" />
+
+    <TextView
+        android:id="@+id/nomeF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextCliente"
+        android:layout_alignBottom="@+id/TextCliente"
+        android:layout_alignEnd="@+id/endBf"
+        android:layout_alignStart="@+id/trocoBf"
+        android:background="@drawable/shape3"
+        android:paddingBottom="5px"
+        android:paddingEnd="5px"
+        android:paddingLeft="5px"
+        android:paddingRight="5px"
+        android:paddingStart="5px"
+        android:paddingTop="5px"
+        android:text="Pedro Henrique" />
+
+    <TextView
+        android:id="@+id/pizzaF"
+        android:layout_width="300dp"
+        android:layout_height="18dp"
+        android:layout_alignBaseline="@+id/textView18"
+        android:layout_alignBottom="@+id/textView18"
+        android:layout_toEndOf="@+id/TextCliente"
+        android:background="@drawable/shape3"
+        android:paddingBottom="5px"
+        android:paddingEnd="5px"
+        android:paddingLeft="5px"
+        android:paddingRight="5px"
+        android:paddingStart="5px"
+        android:paddingTop="5px"
+        android:text="Pizza Della Nonna        R$45,00"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/nomeBF"
+        android:layout_width="230dp"
+        android:layout_height="18dp"
+        android:layout_alignBaseline="@+id/textView19"
+        android:layout_alignBottom="@+id/textView19"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/shape3"
+        android:paddingBottom="5px"
+        android:paddingEnd="5px"
+        android:paddingLeft="5px"
+        android:paddingRight="5px"
+        android:paddingStart="5px"
+        android:paddingTop="5px"
+        android:text="NomeBorda"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/reciboValorBorda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape3"
+        android:paddingBottom="5px"
+        android:paddingEnd="5px"
+        android:paddingLeft="5px"
+        android:paddingRight="5px"
+        android:paddingStart="5px"
+        android:paddingTop="5px"
+        android:text="R$6,00"
+        android:textSize="10sp"
+        android:layout_alignBaseline="@+id/textView20"
+        android:layout_alignBottom="@+id/textView20"
+        android:layout_toEndOf="@+id/textView20" />
+
+    <TextView
+        android:id="@+id/bebidaF"
+        android:layout_width="250dp"
+        android:layout_height="18dp"
+        android:background="@drawable/shape3"
+        android:paddingBottom="5px"
+        android:paddingEnd="5px"
+        android:paddingLeft="5px"
+        android:paddingRight="5px"
+        android:paddingStart="5px"
+        android:paddingTop="5px"
+        android:text="Fanta           R$4,00"
+        android:textSize="10sp"
+        android:layout_alignBottom="@+id/textView21"
+        android:layout_alignStart="@+id/nomeBF" />
+
+    <TextView
+        android:id="@+id/qtdBF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape3"
+        android:paddingBottom="5px"
+        android:paddingEnd="5px"
+        android:paddingLeft="5px"
+        android:paddingRight="5px"
+        android:paddingStart="5px"
+        android:paddingTop="5px"
+        android:text="2 unidades"
+        android:textSize="10sp"
+        android:layout_alignBaseline="@+id/textView22"
+        android:layout_alignBottom="@+id/textView22"
+        android:layout_alignEnd="@+id/telBF" />
+
+    <TextView
+        android:id="@+id/formaBf"
+        android:layout_width="225dp"
+        android:layout_height="18dp"
+        android:background="@drawable/shape3"
+        android:paddingBottom="5px"
+        android:paddingEnd="5px"
+        android:paddingLeft="5px"
+        android:paddingRight="5px"
+        android:paddingStart="5px"
+        android:paddingTop="5px"
+        android:text="FormasPagamento"
+        android:textSize="10sp"
+        android:layout_alignBaseline="@+id/textView23"
+        android:layout_alignBottom="@+id/textView23"
+        android:layout_alignEnd="@+id/obsBf"
+        android:layout_toEndOf="@+id/textView23" />
+
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Troco : "
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/formaBf"
+        android:layout_alignEnd="@+id/textView21" />
+
+    <TextView
+        android:id="@+id/trocoBf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView43"
+        android:layout_alignBottom="@+id/textView43"
+        android:layout_alignStart="@+id/bebidaF"
+        android:background="@drawable/shape3"
+        android:paddingBottom="5px"
+        android:paddingEnd="5px"
+        android:paddingLeft="5px"
+        android:paddingRight="5px"
+        android:paddingStart="5px"
+        android:paddingTop="5px"
+        android:text="R$100,00"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/textView45"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Endereço :"
+        android:textColor="@android:color/background_dark"
+        android:layout_alignStart="@+id/textView23"
+        android:layout_below="@+id/trocoBf" />
+
+    <TextView
+        android:id="@+id/textView46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/obsBf"
+        android:layout_below="@+id/obsBf"
+        android:layout_marginTop="18dp"
+        android:text="Total a Pagar :"
+        android:textColor="@android:color/background_dark" />
+
+    <TextView
+        android:id="@+id/endBf"
+        android:layout_width="180dp"
+        android:layout_height="18dp"
+        android:background="@drawable/shape3"
+        android:paddingBottom="5px"
+        android:paddingEnd="5px"
+        android:paddingLeft="5px"
+        android:paddingRight="5px"
+        android:paddingStart="5px"
+        android:paddingTop="5px"
+        android:text="@string/endere_o_entrega"
+        android:textSize="10sp"
+        android:layout_alignBaseline="@+id/textView45"
+        android:layout_alignBottom="@+id/textView45"
+        android:layout_alignStart="@+id/telBF" />
+
+    <TextView
+        android:id="@+id/reciboValorTotal"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_alignBaseline="@+id/textView46"
+        android:layout_alignBottom="@+id/textView46"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@+id/textView46"
+        android:background="@drawable/shape3"
+        android:paddingBottom="10px"
+        android:paddingEnd="10px"
+        android:paddingLeft="10px"
+        android:paddingRight="10px"
+        android:paddingStart="10px"
+        android:paddingTop="10px"
+        android:text="R$0,00"
+        android:textColor="@color/error_color"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textValor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Valor Bebida : "
+        android:textColor="@android:color/background_dark"
+        android:textSize="14sp"
+        android:layout_below="@+id/qtdBF"
+        android:layout_alignStart="@+id/textView22" />
+
+    <TextView
+        android:id="@+id/valbeF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape3"
+        android:paddingBottom="5px"
+        android:paddingEnd="5px"
+        android:paddingLeft="5px"
+        android:paddingRight="5px"
+        android:paddingStart="5px"
+        android:paddingTop="5px"
+        android:text="R$0,00"
+        android:textSize="10sp"
+        android:layout_alignBaseline="@+id/textValor"
+        android:layout_alignBottom="@+id/textValor"
+        android:layout_alignStart="@+id/qtdBF" />
+
+    <TextView
+        android:id="@+id/textView89"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telefone :"
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/endBf"
+        android:layout_alignStart="@+id/textView45" />
+
+    <TextView
+        android:id="@+id/telBF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView89"
+        android:layout_alignTop="@+id/textView89"
+        android:layout_toEndOf="@+id/textView22"
+        android:background="@drawable/shape3"
+        android:paddingBottom="5px"
+        android:paddingEnd="5px"
+        android:paddingLeft="5px"
+        android:paddingRight="5px"
+        android:paddingStart="5px"
+        android:paddingTop="5px"
+        android:text="35 999556699"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/valorPf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape3"
+        android:paddingBottom="5px"
+        android:paddingEnd="5px"
+        android:paddingLeft="5px"
+        android:paddingRight="5px"
+        android:paddingStart="5px"
+        android:paddingTop="5px"
+        android:text="R$40,00"
+        android:textSize="10sp"
+        android:layout_alignBottom="@+id/textView5"
+        android:layout_toEndOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quantidade :"
+        android:textColor="@android:color/background_dark"
+        android:layout_alignBottom="@+id/valorPf"
+        android:layout_toStartOf="@+id/qtdPF" />
+
+    <TextView
+        android:id="@+id/qtdPF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape3"
+        android:paddingBottom="5px"
+        android:paddingEnd="5px"
+        android:paddingLeft="5px"
+        android:paddingRight="5px"
+        android:paddingStart="5px"
+        android:paddingTop="5px"
+        android:text="Qtdd"
+        android:textSize="10sp"
+        android:layout_alignBottom="@+id/textView17"
+        android:layout_toEndOf="@+id/nomeF" />
+
+    <TextView
+        android:id="@+id/obsBf"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignEnd="@+id/Voltarlist"
+        android:layout_alignStart="@+id/textView25"
+        android:layout_below="@+id/textView25"
+        android:background="@drawable/shape3"
+        android:paddingBottom="5px"
+        android:paddingEnd="5px"
+        android:paddingLeft="10px"
+        android:paddingRight="5px"
+        android:paddingStart="5px"
+        android:paddingTop="5px"
+        android:text="Observação"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Observação :"
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/textView89"
+        android:layout_marginTop="14dp"
+        android:layout_alignStart="@+id/textView89" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Devolver :"
+        android:textColor="@android:color/background_dark"
+        android:layout_alignBaseline="@+id/devBf"
+        android:layout_alignBottom="@+id/devBf"
+        android:layout_alignStart="@+id/textView43" />
+
+    <TextView
+        android:id="@+id/devBf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Voltarlist"
+        android:layout_alignStart="@+id/telBF"
+        android:background="@drawable/shape3"
+        android:paddingBottom="5px"
+        android:paddingEnd="5px"
+        android:paddingLeft="5px"
+        android:paddingRight="5px"
+        android:paddingStart="5px"
+        android:paddingTop="5px"
+        android:text="R$50,00"
+        android:textColor="@android:color/holo_green_light" />
+
+</RelativeLayout>

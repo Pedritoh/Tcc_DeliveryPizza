@@ -1,0 +1,110 @@
+<html>
+<head>
+<title>DataParser.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #606366; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(204,120,50); }
+.s1 { color: rgb(169,183,198); }
+.s2 { color: rgb(106,135,89); }
+.s3 { color: rgb(104,151,187); }
+</style>
+</head>
+<BODY BGCOLOR="#2b2b2b">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+DataParser.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">package </span><span class="s1">com.example.pedrito.delivery_pizza.Delivery</span><span class="s0">;</span><span class="s1"> 
+ 
+</span><span class="s0">import </span><span class="s1">android.app.ProgressDialog</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.content.Context</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.content.Intent</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.net.ConnectivityManager</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.net.NetworkInfo</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.os.AsyncTask</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.sax.StartElementListener</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.view.View</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.widget.AdapterView</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.widget.ArrayAdapter</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.widget.ListView</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.widget.Toast</span><span class="s0">;</span><span class="s1"> 
+ 
+</span><span class="s0">import </span><span class="s1">org.json.JSONArray</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">org.json.JSONException</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">org.json.JSONObject</span><span class="s0">;</span><span class="s1"> 
+ 
+</span><span class="s0">import </span><span class="s1">java.lang.reflect.Array</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">java.util.ArrayList</span><span class="s0">;</span><span class="s1"> 
+ 
+ 
+</span><span class="s0">public class </span><span class="s1">DataParser </span><span class="s0">extends </span><span class="s1">AsyncTask&lt;Void</span><span class="s0">,</span><span class="s1">Void</span><span class="s0">,</span><span class="s1">Boolean&gt; { 
+    Context c</span><span class="s0">;</span><span class="s1"> 
+    String jsonData</span><span class="s0">;</span><span class="s1"> 
+    ListView lv</span><span class="s0">;</span><span class="s1"> 
+    ProgressDialog pd</span><span class="s0">;</span><span class="s1"> 
+    ArrayList&lt;String&gt; spacecrafts=</span><span class="s0">new </span><span class="s1">ArrayList&lt;&gt;()</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">public </span><span class="s1">DataParser(Context c</span><span class="s0">, </span><span class="s1">String jsonData</span><span class="s0">, </span><span class="s1">ListView lv) { 
+        </span><span class="s0">this</span><span class="s1">.c = c</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">this</span><span class="s1">.jsonData = jsonData</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">this</span><span class="s1">.lv = lv</span><span class="s0">;</span><span class="s1"> 
+    } 
+    @Override 
+    </span><span class="s0">protected void </span><span class="s1">onPreExecute() { 
+        </span><span class="s0">super</span><span class="s1">.onPreExecute()</span><span class="s0">;</span><span class="s1"> 
+        pd=</span><span class="s0">new </span><span class="s1">ProgressDialog(c)</span><span class="s0">;</span><span class="s1"> 
+        pd.setTitle(</span><span class="s2">&quot;Parse&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        pd.setMessage(</span><span class="s2">&quot;Pasring..Please wait&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        pd.show()</span><span class="s0">;</span><span class="s1"> 
+    } 
+    @Override 
+    </span><span class="s0">protected </span><span class="s1">Boolean doInBackground(Void... params) { 
+        </span><span class="s0">return this</span><span class="s1">.parseData()</span><span class="s0">;</span><span class="s1"> 
+    } 
+    @Override 
+    </span><span class="s0">protected void </span><span class="s1">onPostExecute(Boolean result) { 
+        </span><span class="s0">super</span><span class="s1">.onPostExecute(result)</span><span class="s0">;</span><span class="s1"> 
+        pd.dismiss()</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">if</span><span class="s1">(result) 
+        { 
+            ArrayAdapter adapter=</span><span class="s0">new </span><span class="s1">ArrayAdapter(c</span><span class="s0">,</span><span class="s1">android.R.layout.simple_list_item_1</span><span class="s0">,</span><span class="s1">spacecrafts)</span><span class="s0">;</span><span class="s1"> 
+            lv.setAdapter(adapter)</span><span class="s0">;</span><span class="s1"> 
+            lv.setOnItemClickListener(</span><span class="s0">new </span><span class="s1">AdapterView.OnItemClickListener() { 
+                @Override 
+                </span><span class="s0">public void </span><span class="s1">onItemClick(AdapterView&lt;?&gt; parent</span><span class="s0">, </span><span class="s1">View view</span><span class="s0">, int </span><span class="s1">position</span><span class="s0">, long </span><span class="s1">id) { 
+                    Toast.makeText(c</span><span class="s0">, </span><span class="s1">spacecrafts.get(position)</span><span class="s0">, </span><span class="s1">Toast.LENGTH_SHORT).show()</span><span class="s0">;</span><span class="s1"> 
+ 
+ 
+                } 
+            })</span><span class="s0">;</span><span class="s1"> 
+        } 
+    } 
+    </span><span class="s0">private </span><span class="s1">Boolean parseData() 
+    { 
+        </span><span class="s0">try</span><span class="s1"> 
+        { 
+            JSONArray ja = </span><span class="s0">new </span><span class="s1">JSONArray(jsonData)</span><span class="s0">;</span><span class="s1"> 
+            JSONObject jo</span><span class="s0">;</span><span class="s1"> 
+            spacecrafts.clear()</span><span class="s0">;</span><span class="s1"> 
+            </span><span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s3">0</span><span class="s0">; </span><span class="s1">i &lt; ja.length()</span><span class="s0">; </span><span class="s1">i++) { 
+                jo = ja.getJSONObject(i)</span><span class="s0">;</span><span class="s1"> 
+ 
+                String name = jo.getString(</span><span class="s2">&quot;nomeProduto&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+                String espaco = (</span><span class="s2">&quot;</span><span class="s0">\r</span><span class="s2">.</span><span class="s0">\r</span><span class="s2">.</span><span class="s0">\r</span><span class="s2">.</span><span class="s0">\r</span><span class="s2">.</span><span class="s0">\r</span><span class="s2">.</span><span class="s0">\r</span><span class="s2">.</span><span class="s0">\r</span><span class="s2">.</span><span class="s0">\r</span><span class="s2">.</span><span class="s0">\r</span><span class="s2">.</span><span class="s0">\r</span><span class="s2">.</span><span class="s0">\r</span><span class="s2">.</span><span class="s0">\r</span><span class="s2">.</span><span class="s0">\r</span><span class="s2">.</span><span class="s0">\r</span><span class="s2">.</span><span class="s0">\r</span><span class="s2">.</span><span class="s0">\r</span><span class="s2">.</span><span class="s0">\r</span><span class="s2">.</span><span class="s0">\r</span><span class="s2">.</span><span class="s0">\r</span><span class="s2">.</span><span class="s0">\r</span><span class="s2">.</span><span class="s0">\r</span><span class="s2">.&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+                String valor = jo.getString(</span><span class="s2">&quot;valorProduto&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+                String pula = (</span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+                String descricao = jo.getString(</span><span class="s2">&quot;descricao&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+                spacecrafts.add(name+espaco+valor+pula+descricao)</span><span class="s0">;</span><span class="s1"> 
+            } 
+            </span><span class="s0">return true;</span><span class="s1"> 
+        } </span><span class="s0">catch </span><span class="s1">(JSONException e) { 
+            e.printStackTrace()</span><span class="s0">;</span><span class="s1"> 
+        } 
+        </span><span class="s0">return false;</span><span class="s1"> 
+    } 
+ 
+}</span></pre>
+</body>
+</html>

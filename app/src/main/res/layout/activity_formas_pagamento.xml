@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF9C4"
+    tools:context="com.example.pedrito.delivery_pizza.Delivery.FormasPagamento">
+
+    <TextView
+        android:id="@+id/textFormasDePagamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="43dp"
+        android:fontFamily="cursive"
+        android:text="@string/qual_ser_a_forma_de_pagamento"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp" />
+
+    <CheckBox
+        android:id="@+id/CartaoCredito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textFormasDePagamento"
+        android:layout_below="@+id/textFormasDePagamento"
+        android:layout_marginTop="20dp"
+        android:text="@string/cart_o_cr_dito" />
+
+    <CheckBox
+        android:id="@+id/CartaoDebito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/CartaoCredito"
+        android:layout_below="@+id/CartaoCredito"
+        android:layout_marginTop="18dp"
+        android:text="@string/cart_o_debito"
+        android:layout_alignEnd="@+id/CartaoCredito" />
+
+    <CheckBox
+        android:id="@+id/Dinheiro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="@string/dinheiro"
+        android:layout_below="@+id/CartaoDebito"
+        android:layout_alignStart="@+id/CartaoDebito"
+        android:layout_alignEnd="@+id/CartaoCredito" />
+
+    <TextView
+        android:id="@+id/textTroco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/Dinheiro"
+        android:layout_centerVertical="true"
+        android:fontFamily="cursive"
+        android:text="@string/voc_vai_precisar_de_troco"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/editTroco"
+        style="@android:style/Widget.Holo.EditText"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_alignStart="@+id/textTroco"
+        android:layout_below="@+id/textTroco"
+        android:background="@drawable/shape3"
+        android:ems="10"
+        android:hint="R$50,00"
+        android:inputType="number"
+        android:paddingStart="10px"
+        android:text="0"
+        android:textColor="@android:color/background_dark"
+        android:textColorHint="@color/shadow_start_color" />
+
+    <EditText
+        android:id="@+id/editEnderecoEntrega"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:layout_alignStart="@+id/textEndereco"
+        android:layout_below="@+id/textEndereco"
+        android:background="@drawable/shape3"
+        android:ems="10"
+        android:hint="Rua Maria das dores , 632"
+        android:inputType="text"
+        android:paddingStart="10px"
+        android:textColor="@android:color/background_dark"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textEndereco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/editTroco"
+        android:layout_below="@+id/editTroco"
+        android:layout_marginTop="16dp"
+        android:fontFamily="cursive"
+        android:text="@string/qual_o_endereco_de_entrega"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/btnProsseguir"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape"
+        android:text="Prosseguir"
+        android:textColor="@android:color/background_light"
+        android:layout_below="@+id/telefoneId"
+        android:layout_toEndOf="@+id/telefoneId" />
+
+    <TextView
+        android:id="@+id/textForma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/Dinheiro"
+        android:layout_below="@+id/addForm"
+        android:layout_marginTop="21dp"
+        android:fontFamily="casual"
+        android:text="Forma de Pagamento Escolhida"
+        android:textColor="@color/error_color" />
+
+    <Button
+        android:id="@+id/addForm"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape"
+        android:text="Adicionar Forma de Pagamento"
+        android:textColor="@android:color/background_light"
+        android:layout_below="@+id/CartaoDebito"
+        android:layout_toEndOf="@+id/telefoneId" />
+
+    <TextView
+        android:id="@+id/textTelefone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/editEnderecoEntrega"
+        android:layout_below="@+id/editEnderecoEntrega"
+        android:layout_marginTop="16dp"
+        android:fontFamily="cursive"
+        android:text="Telefone para contato"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/telefoneId"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignStart="@+id/textTelefone"
+        android:layout_below="@+id/textTelefone"
+        android:background="@drawable/shape3"
+        android:ems="10"
+        android:hint="(35) 9 9999-5555"
+        android:inputType="phone"
+        android:paddingStart="10px"
+        android:textColor="@android:color/background_dark"
+        android:textColorHint="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/textView89"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textForma"
+        android:layout_toEndOf="@+id/textForma"
+        android:text="   Total :"
+        android:textColor="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/verTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/error_color"
+        android:layout_alignBaseline="@+id/textView89"
+        android:layout_alignBottom="@+id/textView89"
+        android:layout_toEndOf="@+id/textView89" />
+
+</RelativeLayout>

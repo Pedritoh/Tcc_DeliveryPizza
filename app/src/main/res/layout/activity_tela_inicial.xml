@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF9C4"
+    tools:context="com.example.pedrito.delivery_pizza.Delivery.TelaInicial">
+
+    <TextView
+        android:id="@+id/TextNomeCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtBemVindo"
+        android:layout_marginStart="42dp"
+        android:layout_toEndOf="@+id/imageView2"
+        android:fontFamily="cursive"
+        android:text="@string/nome_cliente"
+        android:textColor="@color/colorAccent"
+        android:textSize="26sp" />
+
+    <Button
+        android:id="@+id/btnCardapio"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textAViso"
+        android:layout_centerVertical="true"
+        android:background="@drawable/shape"
+        android:fontFamily="serif"
+        android:text="Fazer Pedido"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/txtBemVindo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView2"
+        android:layout_toEndOf="@+id/imageView2"
+        android:fontFamily="cursive"
+        android:text="@string/bem_vindo"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textEx"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/TextNomeCliente"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@+id/txtBemVindo"
+        android:fontFamily="cursive"
+        android:paddingLeft="3dp"
+        android:text="@string/Exclamation"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textAViso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="cursive"
+        android:text="@string/fa_a_um_novo_pedido_aqui"
+        android:textColor="@android:color/background_dark"
+        android:textSize="30sp"
+        android:layout_above="@+id/btnCardapio"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="37dp"
+        android:contentDescription=""
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/idTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@android:color/transparent"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignStart="@+id/textAViso" />
+
+    <Button
+        android:id="@+id/VerPedidos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btnCardapio"
+        android:layout_below="@+id/btnCardapio"
+        android:layout_marginTop="29dp"
+        android:background="@drawable/shape"
+        android:fontFamily="serif"
+        android:text="Pedidos Feitos"
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold|italic"
+        android:layout_alignStart="@+id/btnCardapio" />
+</RelativeLayout>

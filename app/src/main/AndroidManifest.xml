@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.pedrito.delivery_pizza">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyTheme">
+        <activity android:name=".Delivery.Main">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Delivery.TelaLogin" />
+        <activity android:name=".Delivery.Cadastro" />
+        <activity android:name=".Delivery.TelaInicial" />
+        <activity android:name=".Delivery.Cardapio" />
+        <activity android:name=".Delivery.FormasPagamento" />
+        <activity android:name=".Delivery.Recibo" />
+        <activity android:name=".Delivery.Auxprodutos" />
+        <activity
+            android:name=".Delivery.CardapioRefri"
+            android:label="@string/title_activity_cardapio_refri"
+            android:theme="@style/Theme.MyTheme" />
+        <activity android:name=".Delivery.qtdRefri" />
+        <activity android:name=".Delivery.listarPedidos" />
+        <activity android:name=".Delivery.pedidoFeito"></activity>
+    </application>
+
+</manifest>
